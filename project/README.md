@@ -24,6 +24,7 @@ is divided into following functions
 6. load_top_three_revenue_items: This loads top 3 revenue items with merge upsert based technique
 ```
 ### Tables
+```
 These are the following tables in the project
 1. staging_sales
 2. TOTAL_DAILY_SALES
