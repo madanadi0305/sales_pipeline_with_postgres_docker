@@ -26,11 +26,20 @@ is divided into following functions
 ### Tables
 ```
 These are the following tables in the project
-1. staging_sales
-2. TOTAL_DAILY_SALES
-3. TOTAL_MONTHLY_SALES
-4. TOP_ITEMS_BY_REVENUE
+1. staging_sales: Contains 
+2. TOTAL_DAILY_SALES: Total Daily Sales or total revenue per day
+3. TOTAL_MONTHLY_SALES: Total Monthly Sales
+4. TOP_ITEMS_BY_REVENUE: Top 3 items by total revenue
 ```
+### Error Handling
+```
+Custom Error Classes:
+FileEmptyError: Raised if the file is empty or can't be read
+TransformDataError: raised if transformation step fails
+Load_Data_Error: Raised if staging or target table load fails
+
+```
+
 ### Pipeline Flow
 ```
 Read and Extract Data from CSV Files to Pandas Dataframe-> Transform Data within Pandas-> Load Transformed Data in Staging Table (staging_sales) -> Load Transformed Aggregates into the 3 main tables (TOTAL_DAILY_SALES, TOTAL_MONTHLY_SALES, TOP_ITEMS_BY_REVENUE)
