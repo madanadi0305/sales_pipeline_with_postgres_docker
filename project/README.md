@@ -1,4 +1,5 @@
 ### Project Structure
+```
 project/
 ├── data/
 │   └── assignment_dataset.csv
@@ -9,18 +10,20 @@ project/
 │   ├── etl_log.log
 │   └── .env
 └── README.md
-
+```
 ### ETL Script
-The python script etl_script.py
-is divided into following steps
-1. extract(): Data is extracted from the CSV File
-2. transform(): Data is transformed into pandas Dataframe with clean, accurate and valid values without duplicates
-3. load_staging_tables(): This is where the results from the transformed dataframe are stored
-4. load_daily_sales_data(): This loads daily sales data using merge upsert approach to avoid duplicates
-5. load_monthly_sales_data():This loads monthly sales data using merge upsert approach to avoid duplicates and error in the way data is stored
-6. 
+The python script for the ETL pipeline is etl_script.py.
+The entire pipeline is idempotent and uses merge-upsert approach to handle data in the 3 tables. There is also a staging table to store all the principal data
+is divided into following functions
+1. extract: Data is extracted from the CSV File
+2. transform: Data is transformed into pandas Dataframe with clean, accurate and valid values without duplicates
+3. load_staging_tables: This is where the results from the transformed dataframe are stored
+4. load_daily_sales_data: This loads daily sales data using merge upsert approach to avoid duplicates
+5. load_monthly_sales_data:This loads monthly sales data using merge upsert approach to avoid duplicates and error in the way data is stored
+6. load_top_three_revenue_items: This loads top 3 revenue items with merge upsert based technique
 
 ### Define Postgres Service in Docker using docker-compose.yml file
+```
 services:
   postgres-db:
     image: postgres:15
@@ -32,7 +35,7 @@ services:
     ports:
       - "5432:5432"
 
-
+```
 
 ### Setup Instructions
 Create a docker-compose.yml file inside project\docker folder
