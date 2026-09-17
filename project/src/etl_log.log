@@ -1,0 +1,57 @@
+2026-09-17 14:54:51,239 - INFO - ETL job started
+2026-09-17 14:54:51,239 - INFO - Extracting data from file: project\data\assignment_dataset.csv
+2026-09-17 14:54:51,272 - INFO - Data extracted successfully (5000 rows, 12 columns)
+2026-09-17 14:54:51,300 - INFO - ETL extract phase completed successfully
+2026-09-17 14:54:52,028 - INFO - Staging table public.staging_sales loaded with 5000 rows
+2026-09-17 14:54:52,039 - INFO - Closing Database Connection
+2026-09-17 14:54:52,040 - INFO - ETL Job Refresh Table public."TARGET_DAILY_SALES" at 2026-09-17 14:54:52.040028
+2026-09-17 14:54:52,361 - INFO - Staging table public.staging_sales loaded with 5000 rows
+2026-09-17 14:54:52,409 - INFO - Closing Database Connection
+2026-09-17 14:54:52,410 - INFO - ETL Job Refresh Table public."TARGET_MONTHLY_SALES" successfully at 2026-09-17 14:54:52.410139
+2026-09-17 14:54:52,727 - INFO - Staging table public.staging_sales loaded with 5000 rows
+2026-09-17 14:54:52,795 - INFO - Closing Database Connection
+2026-09-17 14:54:52,796 - INFO - ETL Job Refresh Table public."TOP_ITEMS_BY_REVENUE" successfully at 2026-09-17 14:54:52.795889
+2026-09-17 15:10:59,618 - INFO - ETL job started
+2026-09-17 15:10:59,619 - INFO - Extracting data from file: project\data\assignment_dataset.csv
+2026-09-17 15:10:59,625 - ERROR - Error extracting data: [Errno 2] No such file or directory: 'project\\data\\assignment_dataset.csv'
+Traceback (most recent call last):
+  File "C:\Users\madan\Downloads\fwdassignmentforinterviewprocesswithnavsoftfordata (1)\project\src\etl_script.py", line 59, in extract_data
+    df = pd.read_csv(CSV_FILE_PATH)
+  File "C:\Users\madan\AppData\Roaming\Python\Python314\site-packages\pandas\io\parsers\readers.py", line 873, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "C:\Users\madan\AppData\Roaming\Python\Python314\site-packages\pandas\io\parsers\readers.py", line 300, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "C:\Users\madan\AppData\Roaming\Python\Python314\site-packages\pandas\io\parsers\readers.py", line 1645, in __init__
+    self._engine = self._make_engine(f, self.engine)
+                   ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "C:\Users\madan\AppData\Roaming\Python\Python314\site-packages\pandas\io\parsers\readers.py", line 1904, in _make_engine
+    self.handles = get_handle(
+                   ~~~~~~~~~~^
+        f,
+        ^^
+    ...<6 lines>...
+        storage_options=self.options.get("storage_options", None),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\madan\AppData\Roaming\Python\Python314\site-packages\pandas\io\common.py", line 926, in get_handle
+    handle = open(
+        handle,
+    ...<3 lines>...
+        newline="",
+    )
+FileNotFoundError: [Errno 2] No such file or directory: 'project\\data\\assignment_dataset.csv'
+2026-09-17 15:10:59,630 - ERROR - ETL extract phase failed
+2026-09-17 15:13:40,662 - INFO - ETL job started
+2026-09-17 15:13:40,663 - INFO - Extracting data from file: ../data/assignment_dataset.csv
+2026-09-17 15:13:40,706 - INFO - Data extracted successfully (5000 rows, 12 columns)
+2026-09-17 15:13:40,826 - INFO - ETL extract phase completed successfully
+2026-09-17 15:13:41,428 - INFO - Staging table public.staging_sales loaded with 5000 rows
+2026-09-17 15:13:41,440 - INFO - Closing Database Connection
+2026-09-17 15:13:41,441 - INFO - ETL Job Refresh Table public."TARGET_DAILY_SALES" at 2026-09-17 15:13:41.441154
+2026-09-17 15:13:41,773 - INFO - Staging table public.staging_sales loaded with 5000 rows
+2026-09-17 15:13:41,787 - INFO - Closing Database Connection
+2026-09-17 15:13:41,787 - INFO - ETL Job Refresh Table public."TARGET_MONTHLY_SALES" successfully at 2026-09-17 15:13:41.787889
+2026-09-17 15:13:42,074 - INFO - Staging table public.staging_sales loaded with 5000 rows
+2026-09-17 15:13:42,113 - INFO - Closing Database Connection
+2026-09-17 15:13:42,114 - INFO - ETL Job Refresh Table public."TOP_ITEMS_BY_REVENUE" successfully at 2026-09-17 15:13:42.114643
